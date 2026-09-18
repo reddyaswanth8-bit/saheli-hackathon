@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff7fb;
+    color: #333;
+}
+
+header {
+    background: #8e44ad;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+button {
+    background: #8e44ad;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #6c3483;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 280px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-bottom: 12px;
+}
+
+.card p {
+    line-height: 1.5;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    background: #f0d9f7;
+}
+#languageSelect {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #8e44ad;
+    border-radius: 8px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+}

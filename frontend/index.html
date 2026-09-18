@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saheli - Financial Empowerment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+
+    <select id="languageSelect" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="te">తెలుగు</option>
+    </select>
+
+    <h1>🌸 Saheli</h1>
+    <p>Financial empowerment for every woman</p>
+
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Your Money. Your Future. Your Power.</h2>
+            <p>
+                Learn, plan and manage your finances with simple,
+                accessible financial guidance.
+            </p>
+
+            <button onclick="startLearning()">Start Learning</button>
+        </section>
+
+        <section class="cards">
+            <div class="card">
+                <h3>💰 Learn Finance</h3>
+                <p>Understand saving, budgeting and everyday money management.</p>
+                <button onclick="learnFinance()">Learn Now</button>
+            </div>
+
+            <div class="card">
+                <h3>📊 Manage Money</h3>
+                <p>Create simple budgets and track your financial goals.</p>
+                <button onclick="manageMoney()">Manage Now</button>
+            </div>
+            <section id="money-section" class="money-section">
+                <section id="dashboard" class="dashboard">
+    <h2>📊 Money Dashboard</h2>
+    <p>Here is a simple view of your money.</p>
+
+    <div class="dashboard-cards">
+
+        <div class="dashboard-card">
+            <h3>💰 Total Income</h3>
+            <p id="totalIncome">₹0</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>💸 Total Expenses</h3>
+            <p id="totalExpense">₹0</p>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>🟢 Money Left</h3>
+            <p id="totalBalance">₹0</p>
+        </div>
+
+    </div>
+</section>
+    <h2>💰 Manage Your Money</h2>
+    <p>Add your income and expenses to understand your money.</p>
+
+    <div class="money-form">
+        <h3>➕ Add Income</h3>
+
+        <input type="number" id="incomeAmount" placeholder="Enter income amount ₹">
+
+        <input type="text" id="incomeSource" placeholder="Income source">
+
+        <button onclick="addIncome()">Add Income</button>
+    </div>
+
+    <div class="money-form">
+        <h3>➖ Add Expense</h3>
+
+        <input type="number" id="expenseAmount" placeholder="Enter expense amount ₹">
+
+        <input type="text" id="expenseReason" placeholder="What did you spend on?">
+
+        <button onclick="addExpense()">Add Expense</button>
+    </div>
+
+    <div class="balance-box">
+        <h3>💵 Current Balance</h3>
+        <p id="balance">₹0</p>
+    </div>
+</section>
+
+            <div class="card">
+                <h3>🤝 Get Guidance</h3>
+                <p>Get simple answers and support for your financial questions.</p>
+                <button onclick="getGuidance()">Ask for Guidance</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Saheli Hackathon</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <section id="season-section" class="season-section">
+    <h2>🌾 Seasonal Planner</h2>
+    <p>Plan your money for important seasons and events.</p>
+
+    <div class="season-box">
+        <select id="season">
+            <option value="">Choose a season</option>
+            <option value="harvest">🌾 Harvest Season</option>
+            <option value="festival">🎉 Festival Season</option>
+            <option value="school">📚 School Season</option>
+            <option value="wedding">💍 Wedding Season</option>
+        </select>
+
+        <input
+            type="number"
+            id="seasonBudget"
+            placeholder="Planned amount ₹"
+        >
+
+        <button onclick="planSeason()">Create Plan</button>
+    </div>
+
+    <div class="season-result">
+        <h3>💡 SAHELI's Plan</h3>
+        <p id="seasonResult">
+            Your seasonal plan will appear here.
+        </p>
+    </div>
+</section>
+    <section id="scam-section" class="scam-section">
+    <h2>🛡️ Scam Shield</h2>
+    <p>Check a suspicious message before taking action.</p>
+
+    <div class="scam-box">
+        <textarea id="scamMessage"
+            placeholder="Paste a suspicious message here..."></textarea>
+
+        <button onclick="checkScam()">Check Message</button>
+    </div>
+
+    <div class="scam-result">
+        <h3>🔍 Safety Check</h3>
+        <p id="scamResult">
+            Your safety result will appear here.
+        </p>
+    </div>
+</section>
+    <section id="ask-section" class="ask-section">
+    <h2>🤖 Ask SAHELI</h2>
+    <p>Ask a simple question about your money.</p>
+
+    <div class="ask-box">
+        <textarea id="userQuestion"
+            placeholder="Type your financial question here..."></textarea>
+
+        <button onclick="askSaheli()">Ask SAHELI</button>
+    </div>
+
+    <div class="answer-box">
+        <h3>💡 SAHELI's Answer</h3>
+        <p id="saheliAnswer">
+            Your answer will appear here.
+        </p>
+    </div>
+</section>
+    <section id="savings-section" class="savings-section">
+    <h2>🎯 Savings Goal</h2>
+    <p>Set a goal and track your progress.</p>
+
+    <div class="savings-form">
+        <input type="text" id="goalName" placeholder="What are you saving for?">
+
+        <input type="number" id="goalAmount" placeholder="Target amount ₹">
+
+        <input type="number" id="savedAmount" placeholder="Amount saved ₹">
+
+        <button onclick="setSavingsGoal()">Set Goal</button>
+    </div>
+
+    <div class="goal-result">
+        <h3 id="goalTitle">Your Goal</h3>
+        <p id="goalProgress">₹0 / ₹0</p>
+        <p id="goalPercentage">0% completed</p>
+    </div>
+</section>
+</body>
+</html>
