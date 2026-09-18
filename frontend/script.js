@@ -1,3 +1,31 @@
+function changeLanguage() {
+    const language = document.getElementById("languageSelect").value;
+
+    if (language === "te") {
+        document.querySelector("header p").textContent =
+            "ప్రతి మహిళకు ఆర్థిక సాధికారత";
+
+        document.querySelector(".hero h2").textContent =
+            "మీ డబ్బు. మీ భవిష్యత్తు. మీ శక్తి.";
+
+        document.querySelector(".hero p").textContent =
+            "సులభమైన ఆర్థిక మార్గదర్శకత్వంతో నేర్చుకోండి, ప్రణాళిక చేసుకోండి మరియు మీ డబ్బును నిర్వహించండి.";
+
+        document.querySelector(".hero button").textContent =
+            "నేర్చుకోవడం ప్రారంభించండి";
+
+        document.querySelector(".card:nth-child(1) h3").textContent =
+            "🪙 ఆర్థిక విషయాలు నేర్చుకోండి";
+
+        document.querySelector(".card:nth-child(2) h3").textContent =
+            "💰 డబ్బును నిర్వహించండి";
+
+        document.querySelector(".card:nth-child(3) h3").textContent =
+            "💡 మార్గదర్శకత్వం పొందండి";
+    } else {
+        location.reload();
+    }
+}
 function startLearning() {
     alert("Welcome to Saheli 🌸");
 }
@@ -188,24 +216,84 @@ function planSeason() {
 function changeLanguage() {
     const language = document.getElementById("languageSelect").value;
 
-    if (language === "te") {
-        document.querySelector("header p").innerText =
-            "ప్రతి మహిళకు ఆర్థిక సాధికారత";
+    // Header
+    document.querySelector("header h1").innerText =
+        language === "te" ? "🌸 సహేలి" : "🌸 Saheli";
 
-        document.querySelector(".hero h2").innerText =
-            "మీ డబ్బు. మీ భవిష్యత్తు. మీ శక్తి.";
+    document.querySelector("header p").innerText =
+        language === "te"
+            ? "ప్రతి మహిళకు ఆర్థిక సాధికారత"
+            : "Financial empowerment for every woman";
 
-        document.querySelector(".hero p").innerText =
-            "సులభమైన ఆర్థిక మార్గదర్శకత్వంతో నేర్చుకోండి, ప్లాన్ చేయండి మరియు మీ డబ్బును నిర్వహించండి.";
+    // Hero section
+    document.querySelector(".hero h2").innerText =
+        language === "te"
+            ? "మీ డబ్బు. మీ భవిష్యత్తు. మీ శక్తి."
+            : "Your Money. Your Future. Your Power.";
 
-    } else {
-        document.querySelector("header p").innerText =
-            "Financial empowerment for every woman";
+    document.querySelector(".hero p").innerText =
+        language === "te"
+            ? "సులభమైన ఆర్థిక మార్గదర్శకత్వంతో నేర్చుకోండి, ప్లాన్ చేయండి మరియు మీ డబ్బును నిర్వహించండి."
+            : "Learn, plan and manage your finances with simple, accessible financial guidance.";
 
-        document.querySelector(".hero h2").innerText =
-            "Your Money. Your Future. Your Power.";
+    document.querySelector(".hero button").innerText =
+        language === "te" ? "నేర్చుకోవడం ప్రారంభించండి" : "Start Learning";
 
-        document.querySelector(".hero p").innerText =
-            "Learn, plan and manage your finances with simple, accessible financial guidance.";
+    // Cards
+    const cards = document.querySelectorAll(".card");
+
+    if (cards.length >= 3) {
+        // Learn Finance
+        cards[0].querySelector("h3").innerText =
+            language === "te" ? "🪙 ఆర్థిక విషయాలు నేర్చుకోండి" : "🪙 Learn Finance";
+
+        cards[0].querySelector("p").innerText =
+            language === "te"
+                ? "పొదుపు, బడ్జెట్ మరియు రోజువారీ డబ్బు నిర్వహణ గురించి తెలుసుకోండి."
+                : "Understand saving, budgeting and everyday money management.";
+
+        cards[0].querySelector("button").innerText =
+            language === "te" ? "ఇప్పుడే నేర్చుకోండి" : "Learn Now";
+
+        // Manage Money
+        cards[1].querySelector("h3").innerText =
+            language === "te" ? "💰 డబ్బును నిర్వహించండి" : "💰 Manage Money";
+
+        cards[1].querySelector("p").innerText =
+            language === "te"
+                ? "సులభమైన బడ్జెట్‌ను రూపొందించి మీ ఆర్థిక లక్ష్యాలను ట్రాక్ చేయండి."
+                : "Create simple budgets and track your financial goals.";
+
+        cards[1].querySelector("button").innerText =
+            language === "te" ? "ఇప్పుడే నిర్వహించండి" : "Manage Now";
+
+        // Get Guidance
+        cards[2].querySelector("h3").innerText =
+            language === "te" ? "💡 మార్గదర్శకత్వం పొందండి" : "💡 Get Guidance";
+
+        cards[2].querySelector("p").innerText =
+            language === "te"
+                ? "మీ ఆర్థిక ప్రశ్నలకు సులభమైన సమాధానాలు మరియు సహాయం పొందండి."
+                : "Get simple answers and support for your financial questions.";
+
+        cards[2].querySelector("button").innerText =
+            language === "te" ? "మార్గదర్శకత్వం పొందండి" : "Ask for Guidance";
+    }
+
+    // Money Dashboard
+    const dashboardTitle = document.querySelector(".dashboard h2, .dashboard h3");
+
+    if (dashboardTitle) {
+        dashboardTitle.innerText =
+            language === "te" ? "📊 మనీ డాష్‌బోర్డ్" : "📊 Money Dashboard";
+    }
+
+    const dashboardText = document.querySelector(".dashboard p");
+
+    if (dashboardText) {
+        dashboardText.innerText =
+            language === "te"
+                ? "ఇక్కడ మీ డబ్బు యొక్క సులభమైన వివరాలు ఉన్నాయి."
+                : "Here is a simple view of your money.";
     }
 }
